@@ -1,0 +1,7 @@
+[%
+
+var color : Template = TemplateFactory.load("EclipseColorScheme2SlickEdit.egl");
+var name = t_colorTheme.all.first().a_name;
+color.generate(name + ".ini");
+
+%]

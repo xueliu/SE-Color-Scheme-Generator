@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SymbolColoring productName="SlickEdit" productVersion="18.0.1.2" version="1.0">
+  <Scheme compatibleWith="RailsCasts" name="Classes and Types - RailsCasts">
+    <Rulet_Rule attributesOff="abstract|template" attributesOn="" bg="0xFFFFFF" classRE="" fg="0xFF8080" fontFlags="F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR" kinds="class" name="Class" parentColor="*CFG_USER_DEFINED*" regexType=""/>
+  </Scheme>
+</SymbolColoring>

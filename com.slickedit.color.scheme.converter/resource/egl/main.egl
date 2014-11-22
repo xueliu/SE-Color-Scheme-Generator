@@ -1,0 +1,4 @@
+[%
+var tmp : Template = TemplateFactory.load("EclipseColorScheme2SlickEdit.egl");
+tmp.generate("uscheme.ini");
+%]

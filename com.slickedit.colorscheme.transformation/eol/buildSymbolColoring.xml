@@ -1,0 +1,12 @@
+<project default="main">
+	<target name="main">
+		
+		<epsilon.xml.loadModel name="SymbolColoring" file="gen_SymbolColoring.xml" 
+			read ="false" store="true"/>
+		
+		<epsilon.eol src="buildSymbolColoring.eol">
+			<model ref="SymbolColoring"/>
+		</epsilon.eol>
+		
+	</target>
+</project>

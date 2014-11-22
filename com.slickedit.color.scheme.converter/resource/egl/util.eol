@@ -1,0 +1,42 @@
+
+
+operation String string2hex() : String {
+	return self.replace('#', '0x');
+}
+
+operation Any getColor() : String {
+	var tmpcolor 	= self.all.first().a_color;
+	var header 		= tmpcolor.substring(0, 1);
+	var red 		= tmpcolor.substring(1, 3);
+	var green 		= tmpcolor.substring(3, 5);
+	var blue 		= tmpcolor.substring(5, 7);
+	return header + blue + green + red;
+}
+operation SymbolColoring!Element createRule(name : String) {
+	
+	// Create a new Rule element
+	var rule = new SymbolColoring!t_Rulet_Rule;
+	
+	// Set its name
+	rule.a_name 	= name;
+	
+	// TODO: check
+	// Set its regular expresion type
+	rule.a_regexType = "";
+	
+	// TODO: what is classRE
+	// Set its classRE
+	rule.a_classRE 	= "";
+	
+	rule.a_kinds 			= "class";
+	rule.a_attributesOn 	= "";
+	rule.a_attributesOff	= "abstract|template";
+	rule.a_parentColor 		= "*CFG_USER_DEFINED*";
+	rule.a_fg				= "0xFF8080";
+	rule.a_bg				= "0xFFFFFF";
+	rule.a_fontFlags		= "F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR";
+	
+	// Add the rule as a child
+	self.appendChild(rule);
+
+}

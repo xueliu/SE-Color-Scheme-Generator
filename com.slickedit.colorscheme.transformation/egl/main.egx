@@ -1,0 +1,9 @@
+import 'util.eol';
+
+rule ColorXML2ColorINI
+	transform colorTheme : t_colorTheme {
+	
+	template : "EclipseColorScheme2SlickEdit.egl"
+	
+	target : "../gen-se-color-scheme/"+ colorTheme.a_name  + ".ini"
+}

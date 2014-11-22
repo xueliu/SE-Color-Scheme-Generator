@@ -1,0 +1,11 @@
+[%
+
+var symbolcoloring : Template = TemplateFactory.load("EclipseColorScheme2SymbolColoring.egl");
+var xmlformat = new Native("org.eclipse.epsilon.egl.formatter.language.XmlFormatter");
+
+var name = EclipseColorSchemeXML!t_colorTheme.all.first().a_name;
+
+symbolcoloring.setFormatter(xmlformat);
+symbolcoloring.generate("SymbolColoring.xml");
+
+%]

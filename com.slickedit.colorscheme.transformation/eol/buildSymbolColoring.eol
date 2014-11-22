@@ -1,0 +1,11 @@
+var symbolcoloring 				= new t_SymbolColoring;
+SymbolColoring.root 			= symbolcoloring;
+symbolcoloring.a_version 		= "1.0";
+symbolcoloring.a_productName 	= "SlickEdit";
+symbolcoloring.a_productVersion = "18.0.1.2";
+
+var scheme 				= new t_Scheme;
+scheme.a_name 			= "Classes and Types - RailsCasts";
+scheme.a_compatibleWith = "RailsCasts";
+
+symbolcoloring.appendChild(scheme);

@@ -1,0 +1,478 @@
+[%
+import 'util.eol';
+
+var searchResultIndication 			= t_searchResultIndication.getColor().string2hex();
+var filteredSearchResultIndication 	= t_filteredSearchResultIndication.getColor().string2hex();
+var occurrenceIndication 			= t_occurrenceIndication.getColor().string2hex();
+var writeOccurrenceIndication 		= t_writeOccurrenceIndication.getColor().string2hex();
+var findScope 						= t_findScope.getColor().string2hex();
+var deletionIndication 				= t_deletionIndication.getColor().string2hex();
+var sourceHoverBackground 			= t_sourceHoverBackground.getColor().string2hex();
+var singleLineComment 				= t_singleLineComment.getColor().string2hex();
+var multiLineComment 				= t_multiLineComment.getColor().string2hex();
+var commentTaskTag 					= t_commentTaskTag.getColor().string2hex();
+var javadoc 						= t_javadoc.getColor().string2hex();
+var javadocLink 					= t_javadocLink.getColor().string2hex();
+var javadocTag 						= t_javadocTag.getColor().string2hex();
+var javadocKeyword 					= t_javadocKeyword.getColor().string2hex();
+var class 							= t_class.getColor().string2hex();
+var interface 						= t_interface.getColor().string2hex();
+var method 							= t_method.getColor().string2hex();
+var methodDeclaration 				= t_methodDeclaration.getColor().string2hex();
+var bracket 						= t_bracket.getColor().string2hex();
+var number 							= t_number.getColor().string2hex();
+var string 							= t_string.getColor().string2hex();
+var operator 						= t_operator.getColor().string2hex();
+var keyword 						= t_keyword.getColor().string2hex();
+var annotation 						= t_annotation.getColor().string2hex();
+var staticMethod 					= t_staticMethod.getColor().string2hex();
+var localVariable 					= t_localVariable.getColor().string2hex();
+var localVariableDeclaration 		= t_localVariableDeclaration.getColor().string2hex();
+var field 							= t_field.getColor().string2hex();
+var staticField 					= t_staticField.getColor().string2hex();
+var staticFinalField 				= t_staticFinalField.getColor().string2hex();
+var deprecatedMember 				= t_deprecatedMember.getColor().string2hex();
+var inheritedMethod 				= t_inheritedMethod.getColor().string2hex();
+var abstractMethod 					= t_abstractMethod.getColor().string2hex();
+var parameterVariable 				= t_parameterVariable.getColor().string2hex();
+var typeArgument 					= t_typeArgument.getColor().string2hex();
+var typeParameter 					= t_typeParameter.getColor().string2hex();
+var background 						= t_background.getColor().string2hex();
+var currentLine 					= t_currentLine.getColor().string2hex();
+var foreground 						= t_foreground.getColor().string2hex();
+var lineNumber 						= t_lineNumber.getColor().string2hex();
+var selectionBackground 			= t_selectionBackground.getColor().string2hex();
+var selectionForeground 			= t_selectionForeground.getColor().string2hex();
+
+var colorTheme 						= t_colorTheme.all.first();
+
+var backgroud_colors_inherit 		= '0x2000';
+var font_style_normal 				= '0x0';
+var font_style_bold 				= '0x1';
+var font_style_italic				= '0x2';
+var font_style_underline			= '0x8';
+
+%]
+[[%=colorTheme.a_name.toLowerCase()%]]
+VERSION=1
+# ID=[%=colorTheme.a_id%]
+# MODIFIED=[%=colorTheme.a_modified%]
+# AUTHOR=[%=colorTheme.a_author%]
+# WEBSITE=[%=colorTheme.a_website%]
+# Associated symbol coloring
+# ASSOCIATED_SYMBOL_SCHEME=object_symbols not jet implemented
+#
+# suffixes:
+#   fg: Foreground Color
+#   bg: Background Color
+#   ff: Font Flags Normal:0x0 Bold:0x1 Italic 0x2 Underline 0x8
+#   em: Embedded color
+[*- General *]
+## General
+[*- Functions <- method *]
+# Functions <- method 
+CFG_FUNCTIONfg=[%=method%]
+CFG_FUNCTIONbg=[%=background%]
+CFG_FUNCTIONff=[%=backgroud_colors_inherit%]
+CFG_FUNCTIONem=[%=background%]
+[*- Identifiers <- class *]
+# Identifiers <- class
+CFG_IDENTIFIERfg=[%=class%]
+CFG_IDENTIFIERbg=[%=background%]
+CFG_IDENTIFIERff=[%=backgroud_colors_inherit%]
+CFG_IDENTIFIERem=[%=background%]
+[*- Keyword <- keyword *]
+# Keyword <- keyword
+CFG_KEYWORDfg=[%=keyword%]
+CFG_KEYWORDbg=[%=background%]
+CFG_KEYWORDff=[%=backgroud_colors_inherit%]
+CFG_KEYWORDem=[%=background%]
+[*- Library Symbol <- keyword *]
+# Library Symbol <- keyword
+CFG_LIBRARY_SYMBOLfg=[%=keyword%]
+CFG_LIBRARY_SYMBOLbg=[%=background%]
+CFG_LIBRARY_SYMBOLff=[%=backgroud_colors_inherit%]
+CFG_LIBRARY_SYMBOLem=[%=background%]
+[*- Operator <- operator *]
+# Operator <- operator
+CFG_OPERATORfg=[%=operator%]
+CFG_OPERATORbg=[%=background%]
+CFG_OPERATORff=[%=backgroud_colors_inherit%]
+CFG_OPERATORem=[%=background%]
+[*- Preprocessor <- keyword *]
+# Preprocessor <- keyword
+CFG_PPKEYWORDfg=[%=keyword%]
+CFG_PPKEYWORDbg=[%=background%]
+CFG_PPKEYWORDff=[%=backgroud_colors_inherit%]
+CFG_PPKEYWORDem=[%=background%]
+[*- Punctuation <- bracket *]
+# Punctuation <- bracket
+CFG_PUNCTUATIONfg=[%=bracket%]
+CFG_PUNCTUATIONbg=[%=background%]
+CFG_PUNCTUATIONff=[%=backgroud_colors_inherit%]
+CFG_PUNCTUATIONem=[%=background%]
+[*- Special characters  *]
+# Special characters
+CFG_SPECIALCHARSfg=0xC0C0C0
+CFG_SPECIALCHARSbg=[%=background%]
+CFG_SPECIALCHARSff=[%=backgroud_colors_inherit%]
+CFG_SPECIALCHARSem=[%=background%]
+[*- User Defined Keyword <- keyword *]
+# User Defined Keyword <- keyword
+CFG_USER_DEFINEDfg=[%=keyword%]
+CFG_USER_DEFINEDbg=[%=background%]
+CFG_USER_DEFINEDff=[%=backgroud_colors_inherit%]
+CFG_USER_DEFINEDem=[%=background%]
+[*- Window Text <- foreground *]
+# Window Text <- foreground 
+CFG_WINDOW_TEXTfg=[%=foreground%]
+CFG_WINDOW_TEXTbg=[%=background%]
+CFG_WINDOW_TEXTff=[%=font_style_normal%]
+CFG_WINDOW_TEXTem=[%=background%]
+[*- Selections *]
+## Selections
+[*- Current Line <- currentLine *]
+# Current Line <- currentLine
+CFG_CLINEfg=[%=foreground%]
+CFG_CLINEbg=[%=currentLine%]
+CFG_CLINEff=[%=font_style_normal%]
+CFG_CLINEem=[%=currentLine%]
+[*- Cursor <- occurrenceIndication *]
+# Cursor <- occurrenceIndication
+CFG_CURSORfg=[%=occurrenceIndication%]
+CFG_CURSORbg=[%=background%]
+CFG_CURSORff=[%=font_style_normal%]
+CFG_CURSORem=[%=background%]
+[*- Selected Current Line *]
+# Selected Current Line
+CFG_SELECTED_CLINEfg=[%=selectionForeground%]
+CFG_SELECTED_CLINEbg=[%=selectionBackground%]
+CFG_SELECTED_CLINEff=[%=font_style_normal%]
+CFG_SELECTED_CLINEem=[%=selectionBackground%]
+[*- Selection *]
+# Selection
+CFG_SELECTIONfg=[%=selectionForeground%]
+CFG_SELECTIONbg=[%=selectionBackground%]
+CFG_SELECTIONff=[%=font_style_normal%]
+CFG_SELECTIONem=[%=selectionBackground%]
+[*- Comments *]
+## Comments
+[*- Block Comment <- multiLineComment *]
+# Block Comment <- multiLineComment
+CFG_COMMENTfg=[%=multiLineComment%]
+CFG_COMMENTbg=[%=background%]
+CFG_COMMENTff=[%=backgroud_colors_inherit%]
+CFG_COMMENTem=[%=background%]
+[*- Documentation Attribute <- javadocTag *]
+# Documentation Attribute <- javadocTag 
+CFG_DOC_ATTRIBUTEfg=[%=javadocTag%]
+CFG_DOC_ATTRIBUTEbg=[%=background%]
+CFG_DOC_ATTRIBUTEff=[%=backgroud_colors_inherit%]
+CFG_DOC_ATTRIBUTEem=[%=background%]
+[*- Documentation Attribute Value <- javadoc *]
+# Documentation Attribute Value <- javadoc
+CFG_DOC_ATTR_VALUEfg=[%=javadoc%]
+CFG_DOC_ATTR_VALUEbg=[%=background%]
+CFG_DOC_ATTR_VALUEff=[%=backgroud_colors_inherit%]
+CFG_DOC_ATTR_VALUEem=[%=background%]
+[*- Documentation Comment <- javadoc*]
+# Documentation <- javadoc
+CFG_DOCUMENTATIONfg=[%=javadoc%]
+CFG_DOCUMENTATIONbg=[%=background%]
+CFG_DOCUMENTATIONff=[%=backgroud_colors_inherit%]
+CFG_DOCUMENTATIONem=[%=background%]
+[*- Documentation Keyword <- javadocKeyword *]
+# Documentation Keyword <- javadocKeyword
+CFG_DOC_KEYWORDfg=[%=javadocKeyword%]
+CFG_DOC_KEYWORDbg=[%=background%]
+CFG_DOC_KEYWORDff=[%=backgroud_colors_inherit%]
+CFG_DOC_KEYWORDem=[%=background%]
+[*- Documentation Punctuation <- bracket*]
+# Documentation Punctuation <- bracket
+CFG_DOC_PUNCTUATIONfg=[%=bracket%]
+CFG_DOC_PUNCTUATIONbg=[%=background%]
+CFG_DOC_PUNCTUATIONff=[%=backgroud_colors_inherit%]
+CFG_DOC_PUNCTUATIONem=[%=background%]
+[*- Inactive Code <- singleLineComment *]
+# Inactive Code <- singleLineComment
+CFG_INACTIVE_CODEfg=[%=singleLineComment%]
+CFG_INACTIVE_CODEbg=[%=background%]
+CFG_INACTIVE_CODEff=[%=backgroud_colors_inherit%]
+CFG_INACTIVE_CODEem=[%=background%]
+[*- Inactive Code Comment <- singleLineComment *]
+# Inactive Code Comment <- singleLineComment
+CFG_INACTIVE_COMMENTfg=[%=singleLineComment%]
+CFG_INACTIVE_COMMENTbg=[%=background%]
+CFG_INACTIVE_COMMENTff=[%=backgroud_colors_inherit%]
+CFG_INACTIVE_COMMENTem=[%=background%]
+[*- Inactive Code Keyword <- singleLineComment *]
+# Inactive Code Keyword <- singleLineComment
+CFG_INACTIVE_KEYWORDfg=[%=singleLineComment%]
+CFG_INACTIVE_KEYWORDbg=[%=background%]
+CFG_INACTIVE_KEYWORDff=[%=backgroud_colors_inherit%]
+CFG_INACTIVE_KEYWORDem=[%=background%]
+[*- Line Comment <- singleLineComment *]
+# Line Comment <- singleLineComment
+CFG_LINE_COMMENTfg=[%=singleLineComment%]
+CFG_LINE_COMMENTbg=[%=background%]
+CFG_LINE_COMMENTff=[%=backgroud_colors_inherit%]
+CFG_LINE_COMMENTem=[%=background%]
+[*- Strings *]
+## Strings
+[*- Backquoted String <- string *]
+# Backquoted String <- string 
+CFG_BACKQUOTED_STRINGfg=[%=string%]
+CFG_BACKQUOTED_STRINGbg=[%=background%]
+CFG_BACKQUOTED_STRINGff=[%=backgroud_colors_inherit%]
+CFG_BACKQUOTED_STRINGem=[%=background%]
+[*- Single Quoted String <- string *]
+# Single Quoted String <- string 
+CFG_SINGLEQUOTED_STRINGfg=[%=string%]
+CFG_SINGLEQUOTED_STRINGbg=[%=background%]
+CFG_SINGLEQUOTED_STRINGff=[%=backgroud_colors_inherit%]
+CFG_SINGLEQUOTED_STRINGem=[%=background%]
+[*- String <- string *]
+# String <- string
+CFG_STRINGfg=[%=string%]
+CFG_STRINGbg=[%=background%]
+CFG_STRINGff=[%=backgroud_colors_inherit%]
+CFG_STRINGem=[%=background%]
+[*- Unterminated String <- writeOccurrenceIndication *]
+# Unterminated String <- writeOccurrenceIndication
+CFG_UNTERMINATED_STRINGfg=[%=writeOccurrenceIndication%]
+CFG_UNTERMINATED_STRINGbg=[%=background%]
+CFG_UNTERMINATED_STRINGff=[%=backgroud_colors_inherit%]
+CFG_UNTERMINATED_STRINGem=[%=background%]
+[*- Numbers *]
+## Numbers
+[*- Floating Point Number <- number *]
+# Floating Point Numbers <- number 
+CFG_FLOATING_NUMBERfg=[%=number%]
+CFG_FLOATING_NUMBERbg=[%=background%]
+CFG_FLOATING_NUMBERff=[%=backgroud_colors_inherit%]
+CFG_FLOATING_NUMBERem=[%=background%]
+[*- Hexadecimal Number <- number  *]
+# Hexadecimal Number <- number 
+CFG_HEX_NUMBERfg=[%=number%]
+CFG_HEX_NUMBERbg=[%=background%]
+CFG_HEX_NUMBERff=[%=backgroud_colors_inherit%]
+CFG_HEX_NUMBERem=[%=background%]
+[*- Line Number <- lineNumber *]
+# Line Number <- lineNumber
+CFG_LINENUMfg=[%=lineNumber%]
+CFG_LINENUMbg=[%=background%]
+CFG_LINENUMff=[%=backgroud_colors_inherit%]
+CFG_LINENUMem=[%=background%]
+[*- Number <- number  *]
+# Number <- number 
+CFG_NUMBERfg=[%=number%]
+CFG_NUMBERbg=[%=background%]
+CFG_NUMBERff=[%=backgroud_colors_inherit%]
+CFG_NUMBERem=[%=background%]
+[*- HTML and XML *]
+## HTML and XML
+[*- Attribute <- localVariable *]
+# Attribute <- localVariable
+CFG_ATTRIBUTEfg=[%=localVariable%]
+CFG_ATTRIBUTEbg=[%=background%]
+CFG_ATTRIBUTEff=[%=backgroud_colors_inherit%]
+CFG_ATTRIBUTEem=[%=background%]
+[*- Unknown Tag Name <- deprecatedMember *]
+# Unknown Tag Name <- deprecatedMembe
+CFG_UNKNOWNXMLELEMENTfg=[%=deprecatedMember%]
+CFG_UNKNOWNXMLELEMENTbg=[%=background%]
+CFG_UNKNOWNXMLELEMENTff=[%=backgroud_colors_inherit%]
+CFG_UNKNOWNXMLELEMENTem=[%=background%]
+[*- XHTML element in XSL *]
+# XHTML element in XSL
+CFG_XHTMLELEMENTINXSLfg=[%=localVariable%]
+CFG_XHTMLELEMENTINXSLbg=[%=background%]
+CFG_XHTMLELEMENTINXSLff=[%=backgroud_colors_inherit%]
+CFG_XHTMLELEMENTINXSLem=[%=background%]
+[*- XML/HTML Numeric Character Reference <- number *]
+# XML/HTML Numeric Character Reference <- number
+CFG_XML_CHARACTER_REFfg=[%=number%]
+CFG_XML_CHARACTER_REFbg=[%=background%]
+CFG_XML_CHARACTER_REFff=[%=backgroud_colors_inherit%]
+CFG_XML_CHARACTER_REFem=[%=background%]
+[*- Markdown *]
+# Markdown
+[*- Markdown Blockquote <- string *]
+# Markdown Blockquote <- string
+CFG_MARKDOWN_BLOCKQUOTEfg=[%=string%]
+CFG_MARKDOWN_BLOCKQUOTEbg=[%=background%]
+CFG_MARKDOWN_BLOCKQUOTEff=[%=backgroud_colors_inherit%]
+CFG_MARKDOWN_BLOCKQUOTEem=[%=background%]
+[*- Markdown Code *]
+# Markdown Code
+CFG_MARKDOWN_CODEfg=[%=foreground%]
+CFG_MARKDOWN_CODEbg=[%=background%]
+CFG_MARKDOWN_CODEff=[%=backgroud_colors_inherit%]
+CFG_MARKDOWN_CODEem=[%=background%]
+[*- Markdown Header *]
+# Markdown Header
+CFG_MARKDOWN_HEADERfg=[%=foreground%]
+CFG_MARKDOWN_HEADERbg=[%=background%]
+CFG_MARKDOWN_HEADERff=[%=backgroud_colors_inherit%]
+CFG_MARKDOWN_HEADERem=[%=background%]
+[*- Markdown Link <- string *]
+# Markdown Link <- string
+CFG_MARKDOWN_LINKfg=[%=foreground%]
+CFG_MARKDOWN_LINKbg=[%=background%]
+CFG_MARKDOWN_LINKff=[%=font_style_underline%]
+CFG_MARKDOWN_LINKem=[%=background%]
+[*- Modifications *]
+## Modifications
+[*- Inserted Line *]
+# Inserted Line
+CFG_INSERTED_LINEfg=0xFFFFFF
+CFG_INSERTED_LINEbg=0x80
+CFG_INSERTED_LINEff=0x0
+CFG_INSERTED_LINEem=0x3030B0
+[*- Modified Line *]
+# Modified Line
+CFG_MODIFIED_LINEfg=0x0
+CFG_MODIFIED_LINEbg=0x45FF
+CFG_MODIFIED_LINEff=0x0
+CFG_MODIFIED_LINEem=0x15CF
+[*- Modified Whitespace *]
+# Modified Whitespace
+CFG_IMAGINARY_SPACEfg=0xFFFFFF
+CFG_IMAGINARY_SPACEbg=0xFF0000
+CFG_IMAGINARY_SPACEff=0x0
+CFG_IMAGINARY_SPACEem=0xCF0000
+[*- No Save Line *]
+# No Save Line
+CFG_IMAGINARY_LINEfg=0xFFFFFF
+CFG_IMAGINARY_LINEbg=0xFF0000
+CFG_IMAGINARY_LINEff=0x0
+CFG_IMAGINARY_LINEem=0xCF0000
+[*- Highlighting *]
+## Highlighting
+[*- Block Matchting *]
+# Block Matchting
+CFG_BLOCK_MATCHINGfg=0x8CFF
+CFG_BLOCK_MATCHINGbg=0xB48246
+CFG_BLOCK_MATCHINGff=0x1
+CFG_BLOCK_MATCHINGem=0x845216
+[*- Compiler Errors *]
+# Compiler Errors
+CFG_ERRORfg=0xFEFEFE
+CFG_ERRORbg=0xFF
+CFG_ERRORff=0x0
+CFG_ERRORem=0xFF
+[*- Filename *]
+# Filename
+CFG_FILENAMEfg=0x0
+CFG_FILENAMEbg=0xC0C0C0
+CFG_FILENAMEff=0x0
+CFG_FILENAMEem=0x909090
+[*- Hex Mode *]
+# Hex Mode
+CFG_HEX_MODE_COLORfg=0xFFFF
+CFG_HEX_MODE_COLORbg=0x40
+CFG_HEX_MODE_COLORff=0x0
+CFG_HEX_MODE_COLORem=0x303070
+[*- Highlight *]
+# Highlight
+CFG_HILIGHTfg=0x0
+CFG_HILIGHTbg=0xC0C0C0
+CFG_HILIGHTff=0x0
+CFG_HILIGHTem=0x909090
+[*- Incremental Search Current Match *]
+# Incremental Search Current Match
+CFG_INC_SEARCH_CURRENTfg=0x0
+CFG_INC_SEARCH_CURRENTbg=0xFFFF80
+CFG_INC_SEARCH_CURRENTff=0x0
+CFG_INC_SEARCH_CURRENTem=0xCFCF50
+[*- Incremental Search Highlight *]
+# Incremental Search Highlight
+CFG_INC_SEARCH_MATCHfg=0x0
+CFG_INC_SEARCH_MATCHbg=0x80FFFF
+CFG_INC_SEARCH_MATCHff=0x0
+CFG_INC_SEARCH_MATCHem=0x50CFCF
+[*- Search Result Truncted *]
+# Search Result Truncted
+CFG_SEARCH_RESULT_TRUNCATEDfg=0xBFC0C0
+CFG_SEARCH_RESULT_TRUNCATEDbg=0xFFFFFF
+CFG_SEARCH_RESULT_TRUNCATEDff=0x0
+[*- Symbol Highlight *]
+# Symbol Highlight
+CFG_SYMBOL_HIGHLIGHTfg=0xFF0000
+CFG_SYMBOL_HIGHLIGHTbg=0xC0C0C0
+CFG_SYMBOL_HIGHLIGHTff=0x0
+CFG_SYMBOL_HIGHLIGHTem=0x909090
+[*- Margines *]
+## Margines
+[*- Current Line Box *]
+# Current Line Box
+CFG_CURRENT_LINE_BOXfg=0x404040
+CFG_CURRENT_LINE_BOXbg=0x404040
+CFG_CURRENT_LINE_BOXff=0x0
+[*- Line Prefix Area *]
+# Line Prefix Area (and right margin)
+CFG_LINEPREFIXAREAfg=0xFFFFFF
+CFG_LINEPREFIXAREAbg=[%=background%]
+CFG_LINEPREFIXAREAff=0x0
+[*- Line Prefix Divider Line *]
+# Line Prefix Divider Line
+CFG_PREFIX_AREA_LINEfg=0x808080
+CFG_PREFIX_AREA_LINEbg=0x808080
+CFG_PREFIX_AREA_LINEff=0x0
+[*- Margin Colums Line(s) *]
+# Margin Colums Line(s) (soft wrap area)
+CFG_MARGINS_COL_LINEfg=0x800040
+CFG_MARGINS_COL_LINEbg=0x800040
+CFG_MARGINS_COL_LINEff=0x0
+[*- Truncate Column Line *]
+# Truncate Column Line
+CFG_TRUNCATION_COL_LINEfg=0xFF
+CFG_TRUNCATION_COL_LINEbg=0xFF
+CFG_TRUNCATION_COL_LINEff=0x0
+[*- Vertical Column Line *]
+# Vertical Column Line
+CFG_VERTICAL_COL_LINEfg=0xC0C0FF
+CFG_VERTICAL_COL_LINEbg=0xC0C0FF
+CFG_VERTICAL_COL_LINEff=0x0
+[*- Application Colors *]
+## Application Colors
+[*- Document Tab - Active *]
+# Document Tab - Active
+CFG_DOCUMENT_TAB_ACTIVEfg=0x80000008
+CFG_DOCUMENT_TAB_ACTIVEbg=0x80000005
+CFG_DOCUMENT_TAB_ACTIVEff=0x0
+[*- Document Tab Modified *]
+# Document Tab - Modified
+CFG_DOCUMENT_TAB_MODIFIEDfg=0xFF
+CFG_DOCUMENT_TAB_MODIFIEDbg=0xFFFFFF
+CFG_DOCUMENT_TAB_MODIFIEDff=0x0
+[*- Document Tab Selected *]
+# Document Tab - Selected
+CFG_DOCUMENT_TAB_SELECTEDfg=0x80000008
+CFG_DOCUMENT_TAB_SELECTEDbg=0x80000005
+CFG_DOCUMENT_TAB_SELECTEDff=0x0
+[*- Document Tab Unselected *]
+# Document Tab - Unselected
+CFG_DOCUMENT_TAB_UNSELECTEDfg=0x80000008
+CFG_DOCUMENT_TAB_UNSELECTEDbg=0x80000005
+CFG_DOCUMENT_TAB_UNSELECTEDff=0x0
+[*- Message *]
+# Message
+CFG_MESSAGEfg=0x80000008
+CFG_MESSAGEbg=0x80000005
+CFG_MESSAGEff=0x0
+[*- Modified Variable *]
+CFG_MODIFIED_ITEMfg=0xFF
+CFG_MODIFIED_ITEMbg=0xFFFFFF
+CFG_MODIFIED_ITEMff=0x0
+[*- Navigation Hint *]
+# Navigation Hint
+CFG_NAVHINTfg=0x80FF
+CFG_NAVHINTbg=[%=background%]
+CFG_NAVHINTff=0x0
+#####
+[*- Status *]
+# Status
+CFG_STATUSfg=0x80000008
+CFG_STATUSbg=0x80000005
+CFG_STATUSff=0x0

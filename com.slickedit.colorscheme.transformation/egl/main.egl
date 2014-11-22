@@ -1,0 +1,12 @@
+[%
+TemplateFactory.setOutputRoot("../gen-se-color-scheme");
+TemplateFactory.setTemplateRoot(".");
+var color : Template = TemplateFactory.load("EclipseColorScheme2SlickEdit.egl");
+color.generate("uscheme.ini");
+
+var symbolcoloring : Template = TemplateFactory.load("EclipseColorScheme2SymbolColoring.egl");
+var xmlformat = new Native("org.eclipse.epsilon.egl.formatter.language.XmlFormatter");
+symbolcoloring.setFormatter(xmlformat);
+//symbolcoloring.populate("SymbolColoring", XMLDoc);
+symbolcoloring.generate("SymbolColoring.xml");
+%]
